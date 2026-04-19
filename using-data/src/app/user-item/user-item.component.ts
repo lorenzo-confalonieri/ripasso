@@ -1,12 +1,22 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input // <--- aggiungi questo
+ } from '@angular/core';
 
 @Component({
   selector: 'app-user-item',
-  standalone: true,
-  imports: [],
+  standalone:true,
   templateUrl: './user-item.component.html',
-  styleUrl: './user-item.component.css'
+  styleUrls: ['./user-item.component.css']
 })
-export class UserItemComponent {
 
+export class UserItemComponent implements OnInit {
+  @Input() name: string = '' ;  // <-- Aggiungi la notazione @input
+
+  constructor() {
+    // Rimuovi l'impostazione del nome
+  }
+
+  ngOnInit() {}
 }
